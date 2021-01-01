@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider/models/info.dart';
-import 'package:flutter_provider/views/page1.dart';
+import 'package:flutter_provider/providers/settings.dart';
+import 'package:flutter_provider/views/home.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => Info(),
+          create: (context) => SettingsProvider(),
         )
       ],
       child: MaterialApp(
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Page1View(),
+        home: HomeView(),
       ),
     );
   }
